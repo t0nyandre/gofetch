@@ -1,7 +1,9 @@
 package main
 
-import "fmt"
+import (
+	"github.com/t0nyandre/gofetch/cmd"
+)
 
 func main() {
-	fmt.Println("Hello, gofetch!")
+	cmd.Gofetch()
 }
