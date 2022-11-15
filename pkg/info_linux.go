@@ -1,13 +1,11 @@
 package pkg
 
-import (
-	"github.com/t0nyandre/gofetch/internal"
-)
+import "github.com/acobaugh/osrelease"
 
 func OS() string {
-	osrelease, err := internal.ReadOSRelease()
+	osrel, err := osrelease.ReadFile("/etc/os-release")
 	if err != nil {
 		panic(err)
 	}
-	return osrelease["NAME"]
+	return osrel["NAME"]
 }
